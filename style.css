@@ -1,0 +1,650 @@
+@font-face {
+    font-family: nb;
+    src: url(/static/font/NBInternationalProBoo.woff2);
+}
+
+@font-face {
+    font-family: rejoy;
+    src: url(/static/font/rejouice.woff2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: nb;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#loader {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(233, 233, 229);
+    gap: 10px;
+}
+
+#loader h3 {
+    font-size: 2vw;
+    font-family: rejoy;
+    font-weight: 100;
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    background-color: #dadada;
+    position: relative;
+}
+
+#page1 video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page1-content {
+    position: relative;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    color: #d2d0d1;
+    justify-content: space-between;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3.2vw 2.8vw;
+}
+
+nav h3 {
+    font-size: 1.4vw;
+    font-weight: 400;
+}
+
+nav h4 {
+    font-size: 1.4vw;
+    font-weight: 400
+}
+
+#cursor {
+    height: 7vw;
+    width: 7vw;
+    background-color: rgba(0, 0, 0, 0.889);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+}
+
+#cursor h5 {
+    font-size: 1vw;
+    font-weight: 500;
+    color: #d2d0d1;
+}
+
+#page1-content h1 {
+    font-family: rejoy;
+    font-size: 27vw;
+    font-weight: 100;
+    line-height: 27vw;
+
+}
+
+#page1-content h1 span {
+    font-family: rejoy;
+    display: inline-block;
+
+}
+
+#page2 {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(233, 233, 229);
+    position: relative;
+    padding: 5vw 2.8vw;
+    font-family: rejoy;
+}
+
+#page2-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 1.2vw;
+    margin-bottom: 1vw;
+    border-bottom: 1px solid #00000092;
+}
+
+#page2-top h3 {
+    font-size: 1.7vw;
+    font-weight: 500;
+    /* width: 28%; */
+}
+
+#page2-top h4 {
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.elem {
+    overflow: hidden;
+}
+
+.elem h1 {
+    font-size: 4.2vw;
+    font-weight: 500;
+}
+
+#page3 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 3vw;
+    background-color: rgb(233, 233, 229);
+}
+
+#page3-top {
+    /* background-color: aquamarine; */
+    text-align: center;
+}
+
+#page3-top h4 {
+    margin-bottom: 1vw;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+#page3-top h2 {
+    font-size: 4vw;
+    font-weight: 500;
+}
+
+#page3-top h4 span {
+    font-size: 0.7vw;
+    background-color: black;
+    color: #dadada;
+    padding: 3px 4px;
+    border-radius: 10px;
+}
+
+#page3-subhead {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 1.2vw;
+    margin-top: 6vw;
+    /* margin-bottom: 1vw; */
+    /* border-bottom: 1px solid #00000092; */
+}
+
+#page3-subhead h3 {
+    font-size: 1.7vw;
+    font-weight: 500;
+    /* width: 28%; */
+}
+
+#page3-subhead h4 {
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+#page3-subhead h4 a {
+    text-decoration: none;
+    color: black;
+}
+
+.underline-effect {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1em;
+}
+
+.underline-effect::before,
+.underline-effect::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    /* Adjust this value to increase/decrease the gap */
+    background-color: currentColor;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.underline-effect::before {
+    left: 0;
+}
+
+.underline-effect::after {
+    right: 0;
+}
+
+.underline-effect:hover::before {
+    visibility: visible;
+    width: 100%;
+}
+
+.underline-effect:hover::after {
+    visibility: visible;
+    width: 100%;
+    right: 0;
+}
+
+.underline-effect:hover::before {
+    width: 100%;
+}
+
+.underline-effect:hover::after {
+    width: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
+}
+
+
+#page3-elements {
+    height: 75vh;
+    width: 100%;
+    /* background-color: #894e6c; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2vw;
+}
+
+#page3-elements .box {
+    height: 100%;
+    width: 32.5%;
+    background-color: #e63a92;
+    position: relative;
+}
+
+#page3-elements .box video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#page3-elements .box img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: all linear 0.7s;
+}
+
+#page3-elements .box:hover img {
+    opacity: 0;
+}
+
+#page4 video {
+    height: 100%;
+}
+
+
+#page4 {
+    height: 80vh;
+    width: 100%;
+    background-color: rgb(233, 233, 229);
+    position: relative;
+    padding: 5vw 2.8vw;
+    font-family: rejoy;
+}
+
+#page4-top {
+    /* display: flex; */
+    align-items: flex-start;
+    justify-content: start;
+    padding-bottom: 1.2vw;
+    margin-bottom: 1vw;
+    border-bottom: 1px solid #00000092;
+}
+
+#page4-top h3 {
+    font-size: 1.7vw;
+    font-weight: 500;
+    /* width: 28%; */
+}
+
+#page4-top h4 {
+    font-size: 1.7vw;
+    font-weight: 500;
+}
+
+.page4-elem {
+    overflow: hidden;
+}
+
+.page4-elem h1 {
+    font-size: 4.2vw;
+    font-weight: 500;
+}
+
+
+#page5 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(233, 233, 229);
+}
+
+#page5 svg {
+    position: absolute;
+    height: 45%;
+
+}
+
+
+#page6 {
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(233, 233, 229);
+    padding: 4vw 0;
+    position: relative;
+
+}
+
+#page6 h1 {
+    font-size: 10vw;
+    font-family: rejoy;
+    font-weight: 100;
+    border-bottom: 1px solid #282727;
+    width: 96%;
+    margin-left: 2%;
+}
+
+#swiperdiv {
+    height: 60vh;
+    width: 100%;
+    position: relative;
+    margin-top: -2%;
+}
+
+.swiper {
+    width: 120%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 19%;
+    object-fit: cover;
+}
+
+#page7{
+    height: 30vh;
+    width: 100%;
+    background-color: rgb(233, 233, 229);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    position: relative;
+
+}
+
+#page7 h6 {
+    margin-bottom: 10px;
+}
+
+#page7 h1 {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+#page7 h1::before,
+#page7 h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: transform 0.4s ease;
+}
+
+#page7 h1::before {
+    left: 0;
+    transform: translateX(0); 
+}
+
+#page7 h1::after {
+    left: -100%;
+    transform: translateX(-100%); 
+}
+
+#page7 h1:hover::before {
+    transform: translateX(100%);
+}
+
+#page7 h1:hover::after {
+    transform: translateX(0);
+}
+
+#page8{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(233, 233, 229);
+}
+
+#page8-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 3vw;
+    font-family: rejoy;
+    font-weight: 100;
+}
+
+#left h2{
+    font-size: 1.5vw;
+    font-weight: 100;
+    font-family: rejoy;
+    padding: 2vw 0.5vw;
+    display: flex;
+}
+
+#left h4{
+    font-size: 0.5vw;
+    font-weight: 100;
+    font-family: rejoy;
+    padding: 1vw 2vw;
+}
+
+#left h4{
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    font-weight: 100;
+    color: #000000;
+    transition: all ease 0.4s;
+    position: relative;
+    font-size: 2vw;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+#left h4::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    left: 0;
+    bottom: -100%;
+    border-radius: 50%;
+    transition: all ease 0.4s;
+}
+
+#left h4:hover::after {
+    bottom: 0;
+    border-radius: 0;
+}
+
+#left h4 a {
+    color: #ffffff;
+    text-decoration: none;
+    position: relative;
+    z-index: 9;
+}
+
+#left h4:hover a {
+    color: #000000;
+}
+
+#right {
+    padding: 2vw 4vw;
+    display: flex;
+    justify-content: space-between; 
+    width: 30%;
+}
+
+#col1,
+#col2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+}
+
+#col1 a,
+#col2 a {
+    position: relative;
+    font-size: 1.3vw;
+    font-family: rejoy;
+    font-weight: 150;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: color 0.3s ease;
+    padding-bottom: 2px; 
+}
+
+#col1 a::after,
+#col2 a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px; 
+    background-color: rgb(255, 255, 255); 
+    transform: scaleX(0); 
+    transform-origin: left; 
+    transition: transform 0.3s ease; 
+}
+
+#col1 a:hover::after,
+#col2 a:hover::after {
+    transform: scaleX(1); 
+}
+
+#page8-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000; 
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#bottom1 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-left: 5px;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.488); */
+}
+
+#left-bottom {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5vw;
+    font-family: rejoy;
+    font-weight: 100;
+}
+
+#right-bottom {
+    display: flex;
+    align-items: flex-end;
+    gap: 30px;
+    padding-right: 1vw;
+    justify-content: space-between;
+    
+}
+
+#right-bottom h5{
+    font-size: 1.5vw;
+    font-family: rejoy;
+    font-weight: 100;
+}
+
+#right-bottom h5 a{
+    text-decoration: none;
+    color: white;
+}
+
+#bottom2 h1{
+    font-size: 20vw;
+    font-weight: 100;
+    font-family: rejoy;
+    color: rgb(233, 233, 229);
+}
+
+#right-bottom a {
+    text-decoration: none;
+    position: relative;
+}
+
+#right-bottom a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: width 0.5s ease;
+}
+
+#right-bottom a:hover::after {
+    width: 100%;
+}
